@@ -2,6 +2,13 @@
 
 // Selecció dels inputs...
 const nameInput = document.querySelector('input[name="name"]');
+const surnameInput = document.querySelector('input[name="surname"]');
+const emailInput = document.querySelector('input[name="email"]');
+const ageInput = document.querySelector('input[name="age"]');
+const genderInput = document.querySelector('select[name="gender"]');
+const messageInput = document.querySelector('select[textarea="message"]');
+
+
 
 // Si no saps com utilitzar aquestes funcions, pots fer ús de missatges per consol o situar
 // els errors allà on consideris lògic
