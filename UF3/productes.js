@@ -15,6 +15,7 @@ const products = [
 const productInput = document.querySelector('select[name="product"]');
 const quantityInput = document.querySelector('input[name="quantity"]');
 const priceInput = document.querySelector('input[name="price"]');
+const addProductBtn = document.getElementById('add-product');
 
 // Funció per eliminar missatges d'error existents
 function removeExistingError(input) {
@@ -38,8 +39,22 @@ function displayError(input, message) {
 // Afegir el llistat a l'html
 
 
-
 // addEventListeners...
-productInput.addEventListener('blur', );
-quantityInput.addEventListener('blur', );
-priceInput.addEventListener('blur', );
+
+
+// Carrega els productes disponibles al formulari
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

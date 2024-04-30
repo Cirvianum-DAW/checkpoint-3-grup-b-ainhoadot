@@ -71,7 +71,7 @@ function validateAge() {
   if (ageValue < 18){
     displayError(ageInput, "Has de ser major d'edat.")
   } else if (isNaN(ageValue)) {
-    displayError(ageInput, "No pot contenir lletres la teva edat")
+    displayError(ageInput, "No pot contenir lletres ni estar buida la teva edat")
   }
 }
 
@@ -95,11 +95,12 @@ function validateMessage() {
   }
 }
 
-
 // addEventListeners...
-nameInput.addEventListener('blur', validateName);
-surnameInput.addEventListener('blur', validateSurname);
-emailInput.addEventListener('blur', validateEmail);
+nameInput.addEventListener('change', validateName);
+surnameInput.addEventListener('change', validateSurname);
+emailInput.addEventListener('change', validateEmail);
 ageInput.addEventListener('blur', validateAge);
-genderInput.addEventListener('blur', validateGender);
-messageInput.addEventListener('blur', validateMessage);
+genderInput.addEventListener('input', validateGender);
+messageInput.addEventListener('submit', validateMessage);
+
+
