@@ -30,31 +30,32 @@ function displayError(input, message) {
   const error = document.createElement("div");
   error.textContent = message;
   error.classList.add("error");
-  //https://developer.mozilla.org/es/docs/Web/API/Element/insertAdjacentElement
   input.insertAdjacentElement("afterend", error);
 }
 
-// Cada validació...
+// Afegir els productes disponibles al formulari
+function loadProducts() {
+  const productSelect = document.querySelector('select[name="product"]');
+  products.forEach(product => {
+    const option = document.createElement('option');
+    option.value = product.name;
+    option.textContent = product.name;
+    productSelect.appendChild(option);
+  });
+}
 
-// Afegir el llistat a l'html
+// Cada vegada que canviem el producte la quantitat passa a 0
+function changeQuantity() {
+  
+}
+
+// Cada vegada que canviem el producte la quantitat s'actualitza depenent del preu del producte
+function changePrice() {
+  
+}
 
 
 // addEventListeners...
-
-
-// Carrega els productes disponibles al formulari
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+document.addEventListener('DOMContentLoaded', loadProducts);
+productInput.addEventListener('change', changeQuantity);
+productInput.addEventListener('change', changePrice);

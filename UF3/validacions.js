@@ -96,11 +96,11 @@ function validateMessage() {
 }
 
 // addEventListeners...
-nameInput.addEventListener('change', validateName);
-surnameInput.addEventListener('change', validateSurname);
-emailInput.addEventListener('change', validateEmail);
+nameInput.addEventListener('input', validateName);
+surnameInput.addEventListener('input', validateSurname);
+emailInput.addEventListener('input', validateEmail);
 ageInput.addEventListener('blur', validateAge);
-genderInput.addEventListener('input', validateGender);
+genderInput.addEventListener('change', validateGender);
 messageInput.addEventListener('submit', validateMessage);
 
 
