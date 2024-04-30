@@ -5,8 +5,8 @@ const nameInput = document.querySelector('input[name="name"]');
 const surnameInput = document.querySelector('input[name="surname"]');
 const emailInput = document.querySelector('input[name="email"]');
 const ageInput = document.querySelector('input[name="age"]');
-// const genderInput = document.querySelector('select[name="gender"]');
-// const messageInput = document.querySelector('select[textarea="message"]');
+const genderInput = document.querySelector('select[name="gender"]');
+const messageInput = document.querySelector('select[textarea="message"]');
 
 // Si no saps com utilitzar aquestes funcions, pots fer ús de missatges per consol o situar
 // els errors allà on consideris lògic
@@ -66,15 +66,40 @@ function validateEmail() {
 // Funció per validar que es major d'edat
 function validateAge() {
   removeExistingError(ageInput);
-  const ageValue = ageInput.value;
+  const ageValue = parseInt(ageInput.value);
 
   if (ageValue < 18){
-
+    displayError(ageInput, "Has de ser major d'edat.")
+  } else if (isNaN(ageValue)) {
+    displayError(ageInput, "No pot contenir lletres la teva edat")
   }
 }
+
+// Funció per validar el genere
+function validateGender() {
+  removeExistingError(genderInput);
+  const genderValue = genderInput.value;
+
+  if (genderValue === "") {
+    displayError(genderInput, "Si us plau, selecciona un gènere");
+  }
+}
+
+// Funció per validar el missatge
+function validateMessage() {
+  removeExistingError(messageInput);
+  const messageValue = messageInput.value;
+
+  if (messageValue.length < 10 || messageValue.length > 200) {
+    displayError(messageInput, "El missatge ha de tenir entre 10 i 200 caràcters");
+  }
+}
+
 
 // addEventListeners...
 nameInput.addEventListener('blur', validateName);
 surnameInput.addEventListener('blur', validateSurname);
 emailInput.addEventListener('blur', validateEmail);
 ageInput.addEventListener('blur', validateAge);
+genderInput.addEventListener('blur', validateGender);
+messageInput.addEventListener('blur', validateMessage);

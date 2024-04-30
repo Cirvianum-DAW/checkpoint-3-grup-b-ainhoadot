@@ -10,3 +10,36 @@ const products = [
   { category: "Llar", price: 79.99, name: "Torradora" },
   { category: "Llar", price: 199.99, name: "Aspiradora" },
 ];
+
+// Selecció dels inputs...
+const productInput = document.querySelector('select[name="product"]');
+const quantityInput = document.querySelector('input[name="quantity"]');
+const priceInput = document.querySelector('input[name="price"]');
+
+// Funció per eliminar missatges d'error existents
+function removeExistingError(input) {
+  const existingError = input.nextElementSibling;
+  if (existingError && existingError.classList.contains("error")) {
+    existingError.remove();
+  }
+}
+
+// Funció per crear i mostrar missatges d'error
+function displayError(input, message) {
+  const error = document.createElement("div");
+  error.textContent = message;
+  error.classList.add("error");
+  //https://developer.mozilla.org/es/docs/Web/API/Element/insertAdjacentElement
+  input.insertAdjacentElement("afterend", error);
+}
+
+// Cada validació...
+
+// Afegir el llistat a l'html
+
+
+
+// addEventListeners...
+productInput.addEventListener('blur', );
+quantityInput.addEventListener('blur', );
+priceInput.addEventListener('blur', );
